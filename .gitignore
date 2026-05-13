@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# WordPress
+wp-config.php
+.env
+.env.local
+
+# Logs
+*.log
+debug.log
+
+# Build artifacts
+node_modules/
+dist/
+.cache/
+
+# OS / system
+Thumbs.db
+ehthumbs.db
