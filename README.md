@@ -50,6 +50,8 @@ Hostinger Business plan has Git auto-deployment in hPanel. Configure:
 
 Push to `main`, Hostinger pulls, file changes are live within ~30 seconds.
 
+**Deploy pipeline status:** GitHub webhook → Hostinger Git → `wp-content/themes/revopsdev-child/`. Verified 2026-05-13.
+
 ## Schema and meta
 
 Currently output via `inc/schema.php` and `inc/meta.php`, hooked into `wp_head` only on `is_front_page()`. If Yoast SEO is installed, comment out the two `add_action` calls in `functions.php` to prevent duplicate output.
