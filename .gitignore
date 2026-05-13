@@ -13,6 +13,9 @@
 *.sublime-workspace
 *.sublime-project
 
+# Claude Code local cache
+.claude/
+
 # WordPress
 wp-config.php
 .env
