@@ -583,19 +583,73 @@
       letter-spacing: -0.01em;
     }
     
-    .rev-widget .rev-contact-form-placeholder,
-    .rev-widget .rev-contact-meetings-placeholder {
-      min-height: 400px;
-      border: 2px dashed var(--rev-border);
-      border-radius: var(--rev-r);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.875rem;
+    /* ─── HubSpot Form Dark Theme Overrides ─── */
+    .rev-widget .hs-form fieldset { max-width: 100% !important; }
+    .rev-widget .hs-form .hs-form-field { margin-bottom: 20px; }
+    .rev-widget .hs-form label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 500;
       color: var(--rev-muted);
-      background: rgba(255, 255, 255, 0.02);
+      margin-bottom: 8px;
+      display: block;
+      letter-spacing: 0.02em;
+    }
+    .rev-widget .hs-form input[type="text"],
+    .rev-widget .hs-form input[type="email"],
+    .rev-widget .hs-form select,
+    .rev-widget .hs-form textarea {
+      width: 100% !important;
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 1px solid var(--rev-border) !important;
+      border-radius: 10px !important;
+      color: var(--rev-text) !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.9375rem !important;
+      padding: 12px 16px !important;
+      transition: border-color 0.2s ease !important;
+      outline: none !important;
+    }
+    .rev-widget .hs-form input:focus,
+    .rev-widget .hs-form textarea:focus {
+      border-color: var(--rev-accent-2) !important;
+      background: rgba(255, 255, 255, 0.08) !important;
+    }
+    .rev-widget .hs-form .hs-button {
+      background: var(--rev-accent) !important;
+      color: #fff !important;
+      font-family: 'Inter', sans-serif !important;
+      font-size: 0.9375rem !important;
+      font-weight: 500 !important;
+      padding: 14px 32px !important;
+      border-radius: 40px !important;
+      border: none !important;
+      cursor: pointer !important;
+      transition: background 0.25s ease, transform 0.25s ease !important;
+      letter-spacing: 0.02em !important;
+    }
+    .rev-widget .hs-form .hs-button:hover {
+      background: var(--rev-accent-2) !important;
+      transform: translateY(-2px) !important;
+    }
+    .rev-widget .hs-form .hs-error-msg,
+    .rev-widget .hs-form .hs-main-font-element {
+      color: #f87171 !important;
+      font-size: 0.8125rem !important;
+      font-family: 'Inter', sans-serif !important;
+    }
+    .rev-widget .hs-form .submitted-message {
+      color: var(--rev-text) !important;
+      font-family: 'Inter', sans-serif !important;
+    }
+    /* Meetings embed */
+    .rev-widget .meetings-iframe-container {
+      min-height: 650px;
       width: 100%;
+    }
+    .rev-widget .meetings-iframe-container iframe {
+      border-radius: var(--rev-r);
+      border: 1px solid var(--rev-border) !important;
     }
     
     .rev-widget .rev-contact-footer {
@@ -710,11 +764,11 @@
       <section class="rev-contact-grid-sec r-wrap">
         <div class="rev-contact-grid">
           <div class="rev-contact-col rev-contact-col-form r-rev r-d2">
-            <div id="hubspot-form-embed" class="rev-contact-form-placeholder">Form loads here</div>
+            <div id="hubspot-form-embed"></div>
           </div>
           <div class="rev-contact-col rev-contact-col-meetings r-rev r-d3">
             <h3>Skip the form. Book a 20-minute call directly.</h3>
-            <div id="hubspot-meetings-embed" class="rev-contact-meetings-placeholder">Meetings widget loads here</div>
+            <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/sharoze?embed=true"></div>
           </div>
         </div>
       </section>
@@ -979,5 +1033,22 @@
 
     })();
   </script>
+
+  <!-- HubSpot Form -->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      if (window.hbspt) {
+        hbspt.forms.create({
+          portalId: "45646869",
+          formId: "08cd6a80-8ddc-4f99-8f2c-4c6334b3f3c1",
+          target: "#hubspot-form-embed"
+        });
+      }
+    });
+  </script>
+
+  <!-- HubSpot Meetings -->
+  <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
 </body>
 </html>
