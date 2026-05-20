@@ -72,6 +72,7 @@
           });
         }, { rootMargin: '-40% 0px -40% 0px' });
         
+        const allSeqs = Array.from(scrollSeqs);
         scrollSeqs.forEach(seq => seqObs.observe(seq));
 
         let idleTimer = null;
@@ -112,8 +113,11 @@
               const vhCenter = window.innerHeight / 2;
 
               if (lastItemCenter <= vhCenter) {
-                stopAutoPlay();
-                return;
+                // Only stop on the final section; otherwise keep scrolling into the next
+                if (activeSeq === allSeqs[allSeqs.length - 1]) {
+                  stopAutoPlay();
+                  return;
+                }
               }
 
               // Only scroll whole pixels; carry the fraction to the next frame
