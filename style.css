@@ -470,7 +470,7 @@ Text Domain: revopsdev
       padding: 12vh 0;
       margin: 0;
       
-      opacity: 0.03;
+      opacity: 0;
       background: var(--rev-grad);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

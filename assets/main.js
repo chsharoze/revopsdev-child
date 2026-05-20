@@ -20,15 +20,13 @@
             const safeZone = vh * 0.02;
             const fadeZone = vh * 0.08;
             
-            let targetOpacity = 0.03;
-            
+            let targetOpacity = 0;
+
             if (dist <= safeZone) {
               targetOpacity = 1;
             } else if (dist < safeZone + fadeZone) {
               const progress = 1 - ((dist - safeZone) / fadeZone);
-              // Ease in out
-              const eased = progress * progress * (3 - 2 * progress);
-              targetOpacity = 0.03 + (0.97 * eased);
+              targetOpacity = progress * progress * (3 - 2 * progress);
             }
             
             item.style.opacity = targetOpacity.toFixed(3);
