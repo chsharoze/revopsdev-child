@@ -442,12 +442,14 @@ Text Domain: revopsdev
     
     .rev-widget .rev-svc-scroll-prefix {
       position: sticky;
-      top: calc(50vh - 0.5em);
+      top: 50vh;
+      transform: translateY(-50%);
       font-size: clamp(3rem, 7vw, 7rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       color: var(--rev-text);
       margin: 0;
+      margin-top: 12vh;
       line-height: 1;
       flex-shrink: 0;
       z-index: 2;
@@ -529,7 +531,9 @@ Text Domain: revopsdev
       }
       .rev-widget .rev-svc-scroll-prefix {
         position: sticky;
-        top: 80px; 
+        top: 80px;
+        transform: none;
+        margin-top: 0;
         padding-top: 40px;
         padding-bottom: 24px;
         z-index: 10;

@@ -96,45 +96,49 @@
           if (!lastTime) lastTime = time;
           const delta = time - lastTime;
           lastTime = time;
-          
+
           if (activeSeq) {
             isAutoScrolling = true;
-            
-            // Ease-in velocity over 1 second
+
             if (velocity < targetVelocity) {
                velocity += (targetVelocity * delta / 1000);
                if (velocity > targetVelocity) velocity = targetVelocity;
             }
-            
-            // Cubic-bezier like ease applied to the velocity ramp
+
             const progress = velocity / targetVelocity;
             const ease = progress * progress * (3 - 2 * progress);
-            
+
             const scrollStep = targetVelocity * (delta / 1000) * ease;
-            
+
             const items = activeSeq.querySelectorAll('.rev-svc-scroll-list li');
             const lastItem = items[items.length - 1];
-            const firstItem = items[0];
-            
-            if (lastItem && firstItem) {
+
+            if (lastItem) {
               const lastItemCenter = lastItem.getBoundingClientRect().top + lastItem.getBoundingClientRect().height / 2;
               const vhCenter = window.innerHeight / 2;
-              
-              if (lastItemCenter < vhCenter) {
-                // We reached the last item. Seamlessly loop back to the first item.
-                const jumpDist = lastItem.getBoundingClientRect().top - firstItem.getBoundingClientRect().top;
-                window.scrollTo(0, window.scrollY - jumpDist);
+
+              if (lastItemCenter <= vhCenter) {
+                stopAutoPlay();
+                return;
               } else {
                 window.scrollBy(0, scrollStep);
               }
             }
           }
-          
+
           autoPlayRaf = requestAnimationFrame(autoPlayLoop);
         }
-        
+
         function startAutoPlay() {
-          if (!activeSeq) return; // Don't start if we aren't looking at a sequence
+          if (!activeSeq) return;
+
+          const items = activeSeq.querySelectorAll('.rev-svc-scroll-list li');
+          if (items.length > 0) {
+            const lastItem = items[items.length - 1];
+            const lastItemCenter = lastItem.getBoundingClientRect().top + lastItem.getBoundingClientRect().height / 2;
+            const vhCenter = window.innerHeight / 2;
+            if (lastItemCenter <= vhCenter) return;
+          }
           lastTime = performance.now();
           velocity = 0;
           autoPlayRaf = requestAnimationFrame(autoPlayLoop);
