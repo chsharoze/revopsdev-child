@@ -13,5 +13,5 @@ function revopsdev_child_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'revopsdev_child_enqueue_scripts', 20 );
 
-add_action('wp_head', 'revopsdev_homepage_schema', 5);
-add_action('wp_head', 'revopsdev_homepage_meta', 1);
+// add_action('wp_head', 'revopsdev_homepage_schema', 5);
+// add_action('wp_head', 'revopsdev_homepage_meta', 1);

@@ -550,13 +550,13 @@
       align-items: center;
       gap: 48px;
     }
-    .rev-widget .rev-founder-photo-placeholder {
+    .rev-widget .rev-founder-photo {
       width: 240px;
       height: 240px;
       border-radius: 50%;
-      background: var(--rev-panel);
       border: 1px solid var(--rev-border);
       flex-shrink: 0;
+      object-fit: cover;
     }
     .rev-widget .rev-about-title {
       font-size: clamp(3rem, 8vw, 6rem);
@@ -784,7 +784,7 @@
       <!-- 1. Founder Hero Block -->
       <header class="rev-about-hero">
         <div class="rev-about-hero-inner r-wrap">
-          <div class="rev-founder-photo-placeholder"></div>
+          <img src="https://github.com/chsharoze.png" alt="Sharoze Iftikhar" class="rev-founder-photo" />
           <div class="rev-founder-info r-rev">
             <span class="r-label">Pakistan / Global</span>
             <h1 class="rev-about-title">Sharoze <span class="highlight">Iftikhar</span></h1>
