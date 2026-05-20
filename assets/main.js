@@ -79,7 +79,7 @@
         let isAutoScrolling = false;
         let velocity = 0;
         let scrollAccum = 0;
-        const targetVelocity = 27.7; // px per second
+        const targetVelocity = 45; // px per second
         
         function stopAutoPlay() {
           if (autoPlayRaf) {
