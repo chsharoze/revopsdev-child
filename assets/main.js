@@ -17,10 +17,8 @@
             // Distance from center of viewport
             const dist = Math.abs(itemCenter - centerLine);
             
-            // Safe zone where opacity is 1
-            const safeZone = vh * 0.05;
-            // Transition zone where opacity fades from 1 to 0.03
-            const fadeZone = vh * 0.15; 
+            const safeZone = vh * 0.02;
+            const fadeZone = vh * 0.08;
             
             let targetOpacity = 0.03;
             
@@ -94,21 +92,15 @@
         
         function autoPlayLoop(time) {
           if (!lastTime) lastTime = time;
-          const delta = time - lastTime;
+          const delta = Math.min(time - lastTime, 50); // clamp: prevent lurch on tab focus
           lastTime = time;
 
           if (activeSeq) {
             isAutoScrolling = true;
 
-            if (velocity < targetVelocity) {
-               velocity += (targetVelocity * delta / 1000);
-               if (velocity > targetVelocity) velocity = targetVelocity;
-            }
-
-            const progress = velocity / targetVelocity;
-            const ease = progress * progress * (3 - 2 * progress);
-
-            const scrollStep = targetVelocity * (delta / 1000) * ease;
+            // Ease-in over ~800ms then constant speed
+            velocity = Math.min(velocity + targetVelocity * delta / 800, targetVelocity);
+            const scrollStep = velocity * (delta / 1000);
 
             const items = activeSeq.querySelectorAll('.rev-svc-scroll-list li');
             const lastItem = items[items.length - 1];
