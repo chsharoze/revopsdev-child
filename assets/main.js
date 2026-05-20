@@ -79,7 +79,8 @@
         let lastTime = 0;
         let isAutoScrolling = false;
         let velocity = 0;
-        const targetVelocity = 100; // px per second
+        let scrollAccum = 0;
+        const targetVelocity = 27.7; // px per second
         
         function stopAutoPlay() {
           if (autoPlayRaf) {
@@ -88,6 +89,7 @@
           }
           isAutoScrolling = false;
           velocity = 0;
+          scrollAccum = 0;
         }
         
         function autoPlayLoop(time) {
@@ -100,7 +102,7 @@
 
             // Ease-in over ~800ms then constant speed
             velocity = Math.min(velocity + targetVelocity * delta / 800, targetVelocity);
-            const scrollStep = velocity * (delta / 1000);
+            scrollAccum += velocity * (delta / 1000);
 
             const items = activeSeq.querySelectorAll('.rev-svc-scroll-list li');
             const lastItem = items[items.length - 1];
@@ -112,8 +114,13 @@
               if (lastItemCenter <= vhCenter) {
                 stopAutoPlay();
                 return;
-              } else {
-                window.scrollBy(0, scrollStep);
+              }
+
+              // Only scroll whole pixels; carry the fraction to the next frame
+              const pixels = Math.floor(scrollAccum);
+              if (pixels >= 1) {
+                window.scrollBy(0, pixels);
+                scrollAccum -= pixels;
               }
             }
           }
