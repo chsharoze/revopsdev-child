@@ -436,7 +436,7 @@ Text Domain: revopsdev
     
     .rev-widget .rev-svc-scroll-inner {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 40px;
     }
     
