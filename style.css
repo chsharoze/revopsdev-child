@@ -543,4 +543,185 @@ Text Domain: revopsdev
       .rev-widget .rev-svc-scroll-list li {
         padding: 6vh 0;
       }
-    }
+      }
+
+      /* ─── Proof Strip ─── */
+      .rev-widget .rev-proof-strip {
+      background: var(--rev-bg-2);
+      border-top: 1px solid var(--rev-border);
+      padding: 60px 0;
+      }
+      .rev-widget .rev-proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      align-items: center;
+      }
+      .rev-widget .rev-proof-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      }
+      .rev-widget .rev-proof-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--rev-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      }
+      .rev-widget .rev-proof-value {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--rev-text);
+      }
+      .rev-widget a.rev-proof-value {
+      color: var(--rev-accent-2);
+      transition: color 0.2s ease;
+      }
+      .rev-widget a.rev-proof-value:hover {
+      color: var(--rev-text);
+      }
+      .rev-widget .rev-proof-clients-placeholder {
+      width: 120px;
+      height: 40px;
+      border: 1px dashed var(--rev-muted);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: var(--rev-muted);
+      border-radius: 4px;
+      }
+
+      /* ─── How We Work ─── */
+      .rev-widget .rev-how-work {
+      padding: 120px 0;
+      background: var(--rev-bg);
+      }
+      .rev-widget .rev-steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+      margin-top: 60px;
+      }
+      .rev-widget .rev-step {
+      flex: 1;
+      position: relative;
+      }
+      .rev-widget .rev-step-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--rev-accent-2);
+      margin-bottom: 16px;
+      }
+      .rev-widget .rev-step-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--rev-text);
+      }
+      .rev-widget .rev-step-desc {
+      font-size: 1rem;
+      color: var(--rev-muted);
+      line-height: 1.6;
+      }
+      .rev-widget .rev-step-arrow {
+      display: none;
+      color: var(--rev-border);
+      }
+      .rev-widget .rev-how-work-footer {
+      margin-top: 60px;
+      }
+      .rev-widget .rev-how-work-link {
+      color: var(--rev-accent-2);
+      font-weight: 500;
+      transition: color 0.2s ease;
+      }
+      .rev-widget .rev-how-work-link:hover {
+      color: var(--rev-text);
+      }
+
+      /* ─── Founder Credibility ─── */
+      .rev-widget .rev-founder-line {
+      padding: 80px 0;
+      background: var(--rev-bg);
+      border-top: 1px solid var(--rev-border);
+      }
+      .rev-widget .rev-founder-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      }
+      .rev-widget .rev-founder-photo-sm-placeholder {
+      width: 56px;
+      height: 56px;
+      background: var(--rev-bg-2);
+      border: 1px solid var(--rev-border);
+      border-radius: 50%;
+      }
+      .rev-widget .rev-founder-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      }
+      .rev-widget .rev-founder-text {
+      color: var(--rev-muted);
+      margin-bottom: 16px;
+      }
+      .rev-widget .rev-founder-link {
+      color: var(--rev-accent-2);
+      font-weight: 500;
+      font-size: 0.9375rem;
+      }
+
+      /* ─── Final CTA ─── */
+      .rev-widget .rev-final-cta {
+      padding: 100px 0 140px;
+      background: var(--rev-bg);
+      }
+      .rev-widget .rev-cta-panel {
+      background: var(--rev-bg-2);
+      border: 1px solid var(--rev-accent);
+      border-radius: 24px;
+      padding: 80px 40px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      }
+      .rev-widget .rev-cta-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin-top: 48px;
+      }
+      .rev-widget .rev-cta-email {
+      color: var(--rev-muted);
+      font-size: 0.9375rem;
+      transition: color 0.2s ease;
+      }
+      .rev-widget .rev-cta-email:hover {
+      color: var(--rev-text);
+      }
+
+      @media (min-width: 768px) {
+      .rev-widget .rev-steps-container {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+      .rev-widget .rev-step-arrow {
+        display: block;
+        width: 24px;
+        margin-top: 44px;
+        flex-shrink: 0;
+      }
+      .rev-widget .rev-cta-actions {
+        flex-direction: row;
+        justify-content: center;
+      }
+      }
