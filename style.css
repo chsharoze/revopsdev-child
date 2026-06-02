@@ -88,11 +88,11 @@ Text Domain: revopsdev
 
     .rev-widget .r-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem;
+      font-size: 0.68rem;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--rev-muted);
+      color: rgba(255, 255, 255, 0.72);
       display: inline-block;
       margin-bottom: 24px;
     }
