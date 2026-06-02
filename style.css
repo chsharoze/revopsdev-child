@@ -88,9 +88,9 @@ Text Domain: revopsdev
 
     .rev-widget .r-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       font-weight: 500;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--rev-muted);
       display: inline-block;
@@ -351,7 +351,7 @@ Text Domain: revopsdev
     .rev-widget .hero-delay-3 { animation-delay: 0.5s; }
 
     .rev-widget .rev-svc-hero-title {
-      font-size: clamp(4rem, 12vw, 9rem);
+      font-size: clamp(2.8rem, 7vw, 5rem);
       line-height: 0.85;
       font-weight: 800;
       letter-spacing: -0.04em;
@@ -510,7 +510,7 @@ Text Domain: revopsdev
         display: flex;
       }
       .rev-widget .rev-svc-hero-title {
-        font-size: clamp(3.2rem, 12vw, 4.5rem);
+        font-size: clamp(2.2rem, 9vw, 3rem);
       }
       .rev-widget .rev-svc-hero-actions {
         flex-direction: column;
