@@ -14,7 +14,7 @@ function revopsdev_homepage_meta() {
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RevOpsDev">
-  <meta property="og:title" content="RevOpsDev — The architect who ships the code.">
+  <meta property="og:title" content="RevOpsDev — Revenue architecture for the AI era">
   <meta property="og:description" content="End-to-end RevOps engineering. Architecture, build, optimisation, and ops across data, cloud, HubSpot, and integrations.">
   <meta property="og:url" content="https://revopsdev.com/">
   <meta property="og:image" content="https://revopsdev.com/og-image.png">
@@ -24,7 +24,7 @@ function revopsdev_homepage_meta() {
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="RevOpsDev — The architect who ships the code.">
+  <meta name="twitter:title" content="RevOpsDev — Revenue architecture for the AI era">
   <meta name="twitter:description" content="End-to-end RevOps engineering. Architecture, build, optimisation, and ops across data, cloud, HubSpot, and integrations.">
   <meta name="twitter:image" content="https://revopsdev.com/og-image.png">
         <?php
