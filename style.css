@@ -88,9 +88,9 @@ Text Domain: revopsdev
 
     .rev-widget .r-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.65rem;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--rev-muted);
       display: inline-block;
