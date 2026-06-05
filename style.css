@@ -553,9 +553,9 @@ Text Domain: revopsdev
       }
       .rev-widget .rev-proof-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 40px;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: start;
       }
       .rev-widget .rev-proof-item {
       display: flex;
@@ -710,6 +710,11 @@ Text Domain: revopsdev
       }
 
       @media (min-width: 768px) {
+      .rev-widget .rev-proof-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        align-items: center;
+      }
       .rev-widget .rev-steps-container {
         flex-direction: row;
         align-items: flex-start;
